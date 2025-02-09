@@ -1,0 +1,231 @@
+/* Reset mặc định */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Tổng thể trang */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f500;
+    text-align: center;
+    
+}
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header - Chỉ nằm trên cùng, không dính khi cuộn */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Đẩy logo sang trái, nav sang giữa */
+    width: 100%;
+    background: rgb(255, 255, 255);
+    color: rgba(255, 255, 255, 0);
+    padding: 15px 30px;
+}
+
+/* Logo và tên trường */
+.header-top {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.logo img {
+    width: 60px;
+    height: auto;
+}
+
+/* Tiêu đề trường */
+.truong h1 {
+    font-size: 24px;
+    color: #000000;
+}
+
+/* Menu điều hướng */
+.nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 10px;
+}
+
+.nav ul li a {
+    color: #000000;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.nav ul li a:hover {
+    color: #1888ff;
+}
+
+/* Banner */
+.banner {
+    width: 100%;
+    height: 500px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Ảnh nền banner */
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Nội dung trên banner */
+.banner-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 36px;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Main nội dung */
+.section-title {
+    font-size: 2rem;
+    margin: 20px 0;
+}
+
+.faculty-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Hiển thị linh hoạt */
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.faculty-card {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.faculty-card:hover {
+    transform: scale(1.05);
+}
+
+/* Ảnh nền */
+.faculty-image {
+    width: 100%;
+    height: 250px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Hiển thị chữ trên ảnh */
+.faculty-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+
+.faculty-title {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.faculty-desc {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+/* Nút bấm */
+.btn {
+    display: inline-block;
+    background: white;
+    color: black;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #1888ff;
+    color: white;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #222;
+    color: white;
+}
+/* Responsive cho mobile */
+@media screen and (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        
+    }
+
+    .header-left {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .logo img {
+        margin-bottom: 5px;
+    }
+    
+
+    .nav {
+        display: flex;
+        justify-content: center;
+    }
+
+    .nav ul {
+        display: flex;
+        flex-wrap: nowrap; /* Giữ tất cả mục trên 1 hàng ngang */
+        overflow-x: auto; /* Nếu dài quá thì cuộn ngang */
+        padding: 10px;
+        gap: 15px;
+        white-space: nowrap; /* Ngăn xuống dòng */
+    }
+    .faculty-container {
+        grid-template-columns: 1fr; /* Hiển thị 1 cột trên mobile */
+    }
+    
+    .faculty-info {
+        padding: 10px;
+    }
+    
+    .faculty-title {
+        font-size: 18px;
+    }
+    
+    .faculty-desc {
+        font-size: 14px;
+    }
+    
+    .btn {
+        font-size: 12px;
+        padding: 8px 12px;
+    }
+}
